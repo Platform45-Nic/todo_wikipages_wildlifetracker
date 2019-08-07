@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong List text:
+  = @list.list_text
+p
+  strong Task:
+  = @list.task
+
+=> link_to 'Edit', edit_list_path(@list)
+'|
+=< link_to 'Back', lists_path
