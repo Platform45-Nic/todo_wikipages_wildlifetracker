@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  database: todo_wikipages_wildlifetracker_app_database
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  adapter: postgresql
+  database: todo_wikipages_wildlifetracker_app_database
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: todo_wikipages_wildlifetracker_app_database_test
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: todo_wikipages_wildlifetracker_app_database
+  pool: 5
+  timeout: 5000
