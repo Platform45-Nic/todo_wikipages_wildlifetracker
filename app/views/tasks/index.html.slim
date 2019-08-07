@@ -3,14 +3,23 @@ h1 Listing tasks
 table
   thead
     tr
-      th Task text
+      th Task's:
       th Done
       th
       th
       th
 
   tbody
-    - @tasks.each do |task|
+    - @tasks.done.each do |task|
+      tr
+        td = task.task_text
+        td = task.done
+        td = link_to 'Show', task
+        td = link_to 'Edit', edit_task_path(task)
+        td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
+
+  tbody
+    - @tasks.not_done.each do |task|
       tr
         td = task.task_text
         td = task.done
