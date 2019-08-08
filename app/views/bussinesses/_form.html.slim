@@ -23,5 +23,5 @@
     = f.number_field :operating_hours
   .field
     = f.label :bussiness_type
-    = f.text_field :bussiness_type
+    = f.collection_select :bussiness_type_id, BussinessType.order(:section), :id, :section, include_blank: false
   .actions = f.submit

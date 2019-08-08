@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  
-  resources :bussinesses
-  resources :bussiness_types
   root to: 'static_pages#index'
+  
+  resources :bussiness_types
+  resources :bussinesses
   
   resources :tasks do
     resources :lists
