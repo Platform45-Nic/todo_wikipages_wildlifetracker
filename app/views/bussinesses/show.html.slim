@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @bussiness.name
+p
+  strong Address:
+  = @bussiness.address
+p
+  strong Phone:
+  = @bussiness.phone
+p
+  strong Website:
+  = @bussiness.website
+p
+  strong Operating hours:
+  = @bussiness.operating_hours
+p
+  strong Bussiness type:
+  = @bussiness.bussiness_type.section
+
+=> link_to 'Edit', edit_bussiness_path(@bussiness)
+'|
+=< link_to 'Back', bussinesses_path
