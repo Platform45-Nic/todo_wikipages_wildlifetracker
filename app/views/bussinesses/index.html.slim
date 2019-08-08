@@ -21,7 +21,7 @@ table
         td = bussiness.phone
         td = bussiness.website
         td = bussiness.operating_hours
-        td = bussiness.bussiness_type
+        td = bussiness.bussiness_type.section
         td = link_to 'Show', bussiness
         td = link_to 'Edit', edit_bussiness_path(bussiness)
         td = link_to 'Destroy', bussiness, data: { confirm: 'Are you sure?' }, method: :delete
@@ -29,3 +29,6 @@ table
 br
 
 = link_to 'New Bussiness', new_bussiness_path
+br
+
+= link_to 'Home', root_path
