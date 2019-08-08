@@ -1,28 +1,20 @@
 class BussinessesController < ApplicationController
   before_action :set_bussiness, only: [:show, :edit, :update, :destroy]
 
-  # GET /bussinesses
-  # GET /bussinesses.json
   def index
     @bussinesses = Bussiness.all
   end
 
-  # GET /bussinesses/1
-  # GET /bussinesses/1.json
   def show
   end
 
-  # GET /bussinesses/new
   def new
     @bussiness = Bussiness.new
   end
 
-  # GET /bussinesses/1/edit
   def edit
   end
 
-  # POST /bussinesses
-  # POST /bussinesses.json
   def create
     @bussiness = Bussiness.new(bussiness_params)
 
@@ -37,8 +29,6 @@ class BussinessesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bussinesses/1
-  # PATCH/PUT /bussinesses/1.json
   def update
     respond_to do |format|
       if @bussiness.update(bussiness_params)
@@ -51,8 +41,6 @@ class BussinessesController < ApplicationController
     end
   end
 
-  # DELETE /bussinesses/1
-  # DELETE /bussinesses/1.json
   def destroy
     @bussiness.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class BussinessesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_bussiness
       @bussiness = Bussiness.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def bussiness_params
       params.require(:bussiness).permit(:name, :address, :phone, :website, :operating_hours, :bussiness_type_id)
     end

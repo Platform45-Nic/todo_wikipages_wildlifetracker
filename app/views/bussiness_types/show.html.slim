@@ -3,6 +3,33 @@ p#notice = notice
 p
   strong Section:
   = @bussiness_type.section
+  br
+
+  table
+    tr
+        th Name
+        th Address
+        th Phone
+        th Website
+        th Operating hours
+        th Bussiness type
+        th
+        th
+        th
+
+    br
+    - @bussinesses.each do |bussiness|
+        tr
+          td = bussiness.name
+          td = bussiness.address
+          td = bussiness.phone
+          td = bussiness.website
+          td = bussiness.operating_hours
+          td = bussiness.bussiness_type.section
+          td = link_to 'Show', bussiness
+          td = link_to 'Edit', edit_bussiness_path(bussiness)
+          td = link_to 'Destroy', bussiness, data: { confirm: 'Are you sure?' }, method: :delete
+
 
 => link_to 'Edit', edit_bussiness_type_path(@bussiness_type)
 '|
