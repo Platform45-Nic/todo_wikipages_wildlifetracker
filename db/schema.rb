@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190807171626) do
+ActiveRecord::Schema.define(version: 20190809121951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "animals", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bussiness_types", force: :cascade do |t|
     t.string "section"
@@ -41,6 +48,26 @@ ActiveRecord::Schema.define(version: 20190807171626) do
     t.index ["task_id"], name: "index_lists_on_task_id"
   end
 
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_regions_on_name", unique: true
+  end
+
+  create_table "sightings", force: :cascade do |t|
+    t.integer "amount_in_one_session"
+    t.date "date"
+    t.integer "latitude"
+    t.integer "longitude"
+    t.bigint "animal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "region_id"
+    t.index ["animal_id"], name: "index_sightings_on_animal_id"
+    t.index ["region_id"], name: "index_sightings_on_region_id"
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "task_text"
     t.boolean "done"
@@ -50,4 +77,6 @@ ActiveRecord::Schema.define(version: 20190807171626) do
 
   add_foreign_key "bussinesses", "bussiness_types"
   add_foreign_key "lists", "tasks"
+  add_foreign_key "sightings", "animals"
+  add_foreign_key "sightings", "regions"
 end
