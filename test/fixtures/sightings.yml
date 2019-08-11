@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_in_one_session: 1
+  date: 2019-08-09
+  latitude: 1
+  longitude: 1
+  animal: one
+
+two:
+  amount_in_one_session: 1
+  date: 2019-08-09
+  latitude: 1
+  longitude: 1
+  animal: two
