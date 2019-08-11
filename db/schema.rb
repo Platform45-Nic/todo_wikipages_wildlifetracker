@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20190809121951) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bussiness_types", force: :cascade do |t|
   create_table "business_types", force: :cascade do |t|
     t.string "section"
     t.datetime "created_at", null: false
