@@ -1,0 +1,25 @@
+h1 Listing Business Types
+
+table
+  thead
+    tr
+      th Section
+      th
+      th
+      th
+
+  tbody
+    - @business_types.each do |business_type|
+      tr
+        td = business_type.section
+        td = link_to 'Show', business_type
+        td = link_to 'Edit', edit_business_type_path(business_type)
+        td = link_to 'Destroy', business_type, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Business type', new_business_type_path
+
+br
+
+= link_to 'Find Businesses', businesses_path
