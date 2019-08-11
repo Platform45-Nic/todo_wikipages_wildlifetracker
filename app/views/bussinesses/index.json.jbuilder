@@ -1,1 +1,1 @@
-json.array! @bussinesses, partial: "bussinesses/bussiness", as: :bussiness
+json.array! @businesses, partial: "businesses/business", as: :business

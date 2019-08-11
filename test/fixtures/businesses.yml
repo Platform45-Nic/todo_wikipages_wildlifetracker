@@ -6,7 +6,7 @@ one:
   phone: 1
   website: MyString
   operating_hours: 1
-  bussiness_type: one
+  business_type: one
 
 two:
   name: MyString
@@ -14,4 +14,4 @@ two:
   phone: 1
   website: MyString
   operating_hours: 1
-  bussiness_type: two
+  business_type: two

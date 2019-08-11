@@ -15,22 +15,22 @@ ActiveRecord::Schema.define(version: 20190807171626) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bussiness_types", force: :cascade do |t|
+  create_table "business_types", force: :cascade do |t|
     t.string "section"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "bussinesses", force: :cascade do |t|
+  create_table "businesses", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.integer "phone"
     t.string "website"
     t.integer "operating_hours"
-    t.bigint "bussiness_type_id"
+    t.bigint "business_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bussiness_type_id"], name: "index_bussinesses_on_bussiness_type_id"
+    t.index ["business_type_id"], name: "index_businesses_on_business_type_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -48,6 +48,6 @@ ActiveRecord::Schema.define(version: 20190807171626) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bussinesses", "bussiness_types"
+  add_foreign_key "businesses", "business_types"
   add_foreign_key "lists", "tasks"
 end

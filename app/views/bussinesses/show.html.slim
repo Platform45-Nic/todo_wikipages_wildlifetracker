@@ -2,23 +2,23 @@ p#notice = notice
 
 p
   strong Name:
-  = @bussiness.name
+  = @business.name
 p
   strong Address:
-  = @bussiness.address
+  = @business.address
 p
   strong Phone:
-  = @bussiness.phone
+  = @business.phone
 p
   strong Website:
-  = @bussiness.website
+  = @business.website
 p
   strong Operating hours:
-  = @bussiness.operating_hours
+  = @business.operating_hours
 p
-  strong Bussiness type:
-  = @bussiness.bussiness_type.section
+  strong Business type:
+  = @business.business_type.section
 
-=> link_to 'Edit', edit_bussiness_path(@bussiness)
+=> link_to 'Edit', edit_business_path(@business)
 '|
-=< link_to 'Back', bussinesses_path
+=< link_to 'Back', businesses_path

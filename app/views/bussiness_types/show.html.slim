@@ -2,7 +2,7 @@ p#notice = notice
 
 p
   strong Section:
-  = @bussiness_type.section
+  = @business_type.section
   br
 
   table
@@ -12,25 +12,25 @@ p
         th Phone
         th Website
         th Operating hours
-        th Bussiness type
+        th Business type
         th
         th
         th
 
     br
-    - @bussinesses.each do |bussiness|
+    - @businesses.each do |business|
         tr
-          td = bussiness.name
-          td = bussiness.address
-          td = bussiness.phone
-          td = bussiness.website
-          td = bussiness.operating_hours
-          td = bussiness.bussiness_type.section
-          td = link_to 'Show', bussiness
-          td = link_to 'Edit', edit_bussiness_path(bussiness)
-          td = link_to 'Destroy', bussiness, data: { confirm: 'Are you sure?' }, method: :delete
+          td = business.name
+          td = business.address
+          td = business.phone
+          td = business.website
+          td = business.operating_hours
+          td = business.business_type.section
+          td = link_to 'Show', business
+          td = link_to 'Edit', edit_business_path(business)
+          td = link_to 'Destroy', business, data: { confirm: 'Are you sure?' }, method: :delete
 
 
-=> link_to 'Edit', edit_bussiness_type_path(@bussiness_type)
+=> link_to 'Edit', edit_business_type_path(@business_type)
 '|
-=< link_to 'Back', bussiness_types_path
+=< link_to 'Back', business_types_path
