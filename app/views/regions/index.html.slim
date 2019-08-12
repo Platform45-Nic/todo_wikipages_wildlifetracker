@@ -1,0 +1,25 @@
+h1 Listing Region
+
+table
+  thead
+    tr
+      th Region name
+      th
+      th
+      th
+
+  tbody
+    - @regions.each do |region|
+      tr
+        td = region.name
+        td = link_to 'Show', region
+        td = link_to 'Edit', edit_region_path(region)
+        td = link_to 'Destroy', region, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Region', new_region_path
+
+br
+
+= link_to 'Find Region', regions_path

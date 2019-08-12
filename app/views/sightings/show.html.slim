@@ -1,0 +1,33 @@
+p#notice = notice
+
+p
+  strong Sighting Name:
+  = @sighting.id
+  br
+
+  table
+    tr
+        th Name
+        th Type
+        th
+        th
+        th
+        th
+        th
+        th
+        th
+
+    br
+      tr
+        td = @sighting.amount_in_one_session
+        td = @sighting.date
+        td = @sighting.latitude
+        td = @sighting.longitude
+        td = @sighting.animal_id
+        td = @sighting.region_id
+        td = link_to 'Show', @sighting
+        td = link_to 'Edit', edit_sighting_path(@sighting)
+        td = link_to 'Destroy', @sighting, data: { confirm: 'Are you sure?' }, method: :delete
+
+
+=< link_to 'Back', sightings_path

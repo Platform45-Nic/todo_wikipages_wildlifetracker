@@ -1,0 +1,23 @@
+p#notice = notice
+
+p
+  strong Region Name:
+  = @region.name
+  br
+
+  table
+    tr
+        th Region
+        th Type
+        th
+        th
+
+    br
+      tr
+        td = @region.name
+        td = link_to 'Show', @region
+        td = link_to 'Edit', edit_region_path(@region)
+        td = link_to 'Destroy', @region, data: { confirm: 'Are you sure?' }, method: :delete
+
+
+=< link_to 'Back', regions_path

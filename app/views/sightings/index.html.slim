@@ -1,0 +1,36 @@
+h1 Listing Sightings
+
+table
+  thead
+    tr
+      th Sighting
+      th
+      th
+      th
+      th
+      th
+      th
+      th
+      th
+
+
+  tbody
+    - @sightings.each do |sighting|
+      tr
+        td = sighting.amount_in_one_session
+        td = sighting.date
+        td = sighting.latitude
+        td = sighting.longitude
+        td = sighting.animal_id
+        td = sighting.region_id
+        td = link_to 'Show', sighting
+        td = link_to 'Edit', sighting_path(sighting)
+        td = link_to 'Destroy', sighting, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Animal', new_sighting_path
+
+br
+
+= link_to 'Find Animals', sightings_path

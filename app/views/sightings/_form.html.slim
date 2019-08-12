@@ -1,0 +1,27 @@
+= form_for @sighting do |f|
+  - if @sighting.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@sighting.errors.count, "error")} prohibited this sighting from being saved:"
+      ul
+        - @sighting.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :amount_in_one_session
+    = f.number_field :amount_in_one_session
+  .field
+    = f.label :date
+    = f.date_field :date
+  .field
+    = f.label :latitude
+    = f.number_field :latitude
+  .field
+    = f.label :longitude
+    = f.number_field :longitude
+  .field
+    = f.label :animal_id
+    = f.collection_select :animal_id, Animal.order(:name), :id, :name, include_blank: false
+  .field
+    = f.label :region_id
+    = f.collection_select :region_id, Region.order(:name), :id, :name, include_blank: false
+  .actions = f.submit

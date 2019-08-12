@@ -16,7 +16,7 @@ p
     br
       tr
         td = @animal.name
-        td = @animal.type
+        td = @animal.animal_type
         td = link_to 'Show', @animal
         td = link_to 'Edit', edit_animal_path(@animal)
         td = link_to 'Destroy', @animal, data: { confirm: 'Are you sure?' }, method: :delete

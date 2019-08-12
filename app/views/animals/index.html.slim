@@ -7,11 +7,13 @@ table
       th
       th
       th
+      th
 
   tbody
     - @animals.each do |animal|
       tr
         td = animal.name
+        td = animal.animal_type
         td = link_to 'Show', animal
         td = link_to 'Edit', edit_animal_path(animal)
         td = link_to 'Destroy', animal, data: { confirm: 'Are you sure?' }, method: :delete
@@ -23,3 +25,11 @@ br
 br
 
 = link_to 'Find Animals', animals_path
+
+br
+
+= link_to 'Log Sighting of Animal', new_sighting_path
+
+br
+
+= link_to 'See Regions', regions_path
