@@ -1,0 +1,25 @@
+p#notice = notice
+
+p
+  strong Animal Name:
+  = @animal.name
+  br
+
+  table
+    tr
+        th Name
+        th Type
+        th
+        th
+        th
+
+    br
+      tr
+        td = @animal.name
+        td = @animal.type
+        td = link_to 'Show', @animal
+        td = link_to 'Edit', edit_animal_path(@animal)
+        td = link_to 'Destroy', @animal, data: { confirm: 'Are you sure?' }, method: :delete
+
+
+=< link_to 'Back', animals_path
