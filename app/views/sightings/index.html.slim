@@ -3,12 +3,13 @@ h1 Listing Sightings
 table
   thead
     tr
-      th Sighting
-      th
-      th
-      th
-      th
-      th
+      th Animal Sighting Count
+      th Date
+      th Latitude
+      th Longitude
+      th Name
+      th Type
+      th Region
       th
       th
       th
@@ -21,8 +22,9 @@ table
         td = sighting.date
         td = sighting.latitude
         td = sighting.longitude
-        td = sighting.animal_id
-        td = sighting.region_id
+        td = Animal.find(sighting.animal_id).name
+        td = Animal.find(sighting.animal_id).animal_type
+        td = Region.find(sighting.region_id).name
         td = link_to 'Show', sighting
         td = link_to 'Edit', sighting_path(sighting)
         td = link_to 'Destroy', sighting, data: { confirm: 'Are you sure?' }, method: :delete
@@ -33,4 +35,16 @@ br
 
 br
 
-= link_to 'Find Animals', sightings_path
+= link_to 'Find Animals', animals_path
+
+br
+
+= link_to 'Log Sighting of Animal', new_sighting_path
+
+br
+
+= link_to 'See Regions', regions_path
+
+br
+
+= link_to 'Home', root_path
